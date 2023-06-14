@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "SB Sans Interface";
+  font-weight: 400;
+  font-style: normal;
+  src: url(fonts/SB-Sans-Interface.woff2) format("woff2"),
+    url(fonts/SB-Sans-Interface.woff) format("woff");
+}
+
+@font-face {
+  font-family: "SB Sans Interface";
+  font-weight: 600;
+  font-style: normal;
+  src: url(fonts/SB-Sans-Interface-Semibold.woff2) format("woff2"),
+    url(fonts/SB-Sans-Interface-Semibold.woff2) format("woff");
+}

@@ -1,0 +1,7 @@
+.main__link-item {
+  padding-left: 20px;
+  background-image: url(../../../images/main__link.svg);
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: left;
+}

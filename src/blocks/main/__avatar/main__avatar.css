@@ -1,0 +1,14 @@
+.main__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #d5e4f7;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #212830;
+}

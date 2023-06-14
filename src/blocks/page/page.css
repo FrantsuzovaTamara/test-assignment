@@ -1,0 +1,19 @@
+.page {
+  min-width: 300px;
+  max-width: 900px;
+  width: 100%;
+  min-height: 704px;
+  box-sizing: border-box;
+  margin: 24px auto 0;
+  padding: 25px 24px;
+  background-color: white;
+  font-family: "SB Sans Interface", Arial, sans-serif;
+  color: black;
+  border-radius: 12px;
+}
+
+@media screen and (max-width: 900px) {
+  .page {
+    width: calc(100% - 24px);
+  }
+}
