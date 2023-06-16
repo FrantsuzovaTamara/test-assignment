@@ -3,3 +3,12 @@
   height: 8px;
   background: rgba(0, 0, 0, 0.08);
 }
+
+.create__scale::after {
+  content: "";
+  width: 0;
+  height: 100%;
+  display: block;
+  background: #5558FA;
+  transition: width 1s linear;
+}

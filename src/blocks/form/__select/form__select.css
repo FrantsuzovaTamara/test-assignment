@@ -1,0 +1,33 @@
+.form__select {
+  height: 44px;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  border-radius: 4px;
+  padding: 12px;
+  box-sizing: border-box;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.48);
+  outline: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.form__select option {
+  display: none;
+  width: inherit;
+  height: inherit;
+  border: white;
+  border-radius: 4px;
+  padding: 12px;
+  font: inherit;
+  outline: none;
+}
+
+.form__select:focus {
+  display: none;
+}
+
+/* color: rgba(0, 0, 0, 0.48); */

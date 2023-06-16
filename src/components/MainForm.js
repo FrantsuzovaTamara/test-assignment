@@ -40,7 +40,7 @@ function MainForm() {
   }
 
   return (
-    <form className="form" onSubmit={handleSubmit(onSubmit)} noValidate>
+    <form className="form form_location_main" onSubmit={handleSubmit(onSubmit)} noValidate>
       <label className="form__field">
         Номер телефона
         <input
@@ -48,7 +48,7 @@ function MainForm() {
           id="phone"
           type="tel"
           name="phone"
-          className={`form__input${errors ? " form__input_error" : ""}`}
+          className={`form__input form__input_location_main${errors ? " form__input_error" : ""}`}
           placeholder="+7 999 999-99-99"
           onChange={maskedPhoneNumber}
           required
@@ -66,7 +66,7 @@ function MainForm() {
           id="email"
           type="email"
           name="email"
-          className={`form__input${errors ? " form__input_error" : ""}`}
+          className={`form__input form__input_location_main${errors ? " form__input_error" : ""}`}
           placeholder="some@email.com"
           onChange={handleChangeValue}
           required
@@ -78,10 +78,10 @@ function MainForm() {
         >{errors ? errors.message : ""}</span>
       </label>
       <button
-        className={`form__button${!errors ? " form__button_active" : ""}`}
+        className={`form__button form__button_type_start${!errors ? " form__button_active" : ""}`}
         onClick={() => {navigate("/test-assignment/create")}}
         id="button-start"
-        disabled={!errors}
+        disabled={errors}
       >
         Начать
       </button>

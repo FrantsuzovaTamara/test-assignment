@@ -15,7 +15,8 @@ function App() {
     phone: "+7 915 305-64-45",
     email: "tamarafr@ntsuzova.ru",
   });
-  
+  const [isOpen, setIsOpen] = useState(false);
+  console.log(isOpen)
   return (
     <DataContext.Provider value={{formData, setFormData}}>
       <Routes>
@@ -40,12 +41,12 @@ function App() {
           path="/test-assignment/create/step3"
           element={
             <Create>
-              <Step3 />
+              <Step3 setIsOpen={setIsOpen} />
             </Create>
           }
         />
       </Routes>
-      <Popup isOpen={false} isError={true} />
+      <Popup isOpen={isOpen} isError={true} />
     </DataContext.Provider>
   );
 }

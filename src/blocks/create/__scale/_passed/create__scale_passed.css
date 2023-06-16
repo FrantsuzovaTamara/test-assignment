@@ -1,3 +1,7 @@
-.create__scale_passed {
-  
+/* .create__scale_passed {
+  background: #5558FA;
+} */
+
+.create__scale_passed::after {
+  width: 100%;
 }

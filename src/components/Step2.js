@@ -22,10 +22,14 @@ function Step2() {
   }
 
   return (
-    <form className="form" onSubmit={handleSubmit(onSubmit)} noValidate>
+    <form
+      className="form form_location_step2"
+      onSubmit={handleSubmit(onSubmit)}
+      noValidate
+    >
       <label className="form__field">
         Преимущества
-        <div>
+        <div className="form__advantage">
           <input
             {...register("email")}
             id="field-advantages-1"
@@ -35,14 +39,9 @@ function Step2() {
             placeholder="Введите текст"
             required
           />
-          <span
-            className={`form__input-error${
-              errors ? " form__input-error_active" : ""
-            }`}
-          ></span>
-          <button></button>
+          <button type="button" className="form__delete-button"></button>
         </div>
-        <div>
+        <div className="form__advantage">
           <input
             {...register("email")}
             id="field-advantages-2"
@@ -52,14 +51,9 @@ function Step2() {
             placeholder="Введите текст"
             required
           />
-          <span
-            className={`form__input-error${
-              errors ? " form__input-error_active" : ""
-            }`}
-          ></span>
-          <button></button>
+          <button type="button" className="form__delete-button"></button>
         </div>
-        <div>
+        <div className="form__advantage">
           <input
             {...register("email")}
             id="field-advantages-3"
@@ -69,92 +63,112 @@ function Step2() {
             placeholder="Введите текст"
             required
           />
-          <span
-            className={`form__input-error${
-              errors ? " form__input-error_active" : ""
-            }`}
-          ></span>
-          <button></button>
+          <button type="button" className="form__delete-button"></button>
         </div>
-        <button>+</button>
+        <button type="button" className="form__add-button">
+          +
+        </button>
+        <span
+          className={`form__input-error${
+            errors ? " form__input-error_active" : ""
+          }`}
+        ></span>
       </label>
-      <label className="form__field">
+      <fieldset className="form__field">
         Группа чекбоксов
-        <input
-          id="field-checkbox-group-option-1"
-          type="checkbox"
-          name="checkbox-1"
-          className={`form__input${errors ? " form__input_error" : ""}`}
-          placeholder="1"
-          required
-        />
-        <input
-          id="field-checkbox-group-option-1"
-          type="checkbox"
-          name="checkbox-2"
-          className={`form__input${errors ? " form__input_error" : ""}`}
-          placeholder="2"
-          required
-        />
-        <input
-          id="field-checkbox-group-option-1"
-          type="checkbox"
-          name="checkbox-3"
-          className={`form__input${errors ? " form__input_error" : ""}`}
-          placeholder="3"
-          required
-        />
+        <label className="form__label">
+          <input
+            id="field-checkbox-group-option-1"
+            type="checkbox"
+            name="checkbox-1"
+            className="form__checkback"
+            required
+          />
+          1
+        </label>
+        <label className="form__label">
+          <input
+            id="field-checkbox-group-option-1"
+            type="checkbox"
+            name="checkbox-1"
+            className="form__checkback"
+            required
+          />
+          2
+        </label>
+        <label className="form__label">
+          <input
+            id="field-checkbox-group-option-1"
+            type="checkbox"
+            name="checkbox-1"
+            className="form__checkback"
+            required
+          />
+          3
+        </label>
         <span
           className={`form__input-error${
             errors ? " form__input-error_active" : ""
           }`}
         ></span>
-      </label>
-      <label className="form__field">
+      </fieldset>
+      <fieldset className="form__field">
         Группа radio
-        <input
-          id="field-radio-group-option-1"
-          type="radio"
-          name="radio-1"
-          className={`form__input${errors ? " form__input_error" : ""}`}
-          placeholder="1"
-          required
-        />
-        <input
-          id="field-radio-group-option-1"
-          type="radio"
-          name="radio-2"
-          className={`form__input${errors ? " form__input_error" : ""}`}
-          placeholder="2"
-          required
-        />
-        <input
-          id="field-radio-group-option-1"
-          type="radio"
-          name="radio-3"
-          className={`form__input${errors ? " form__input_error" : ""}`}
-          placeholder="3"
-          required
-        />
+        <label className="form__label">
+          <input
+            id="field-radio-group-option-1"
+            type="radio"
+            name="radio-1"
+            className="form__radio"
+            required
+          />
+          1
+        </label>
+        <label className="form__label">
+          <input
+            id="field-radio-group-option-1"
+            type="radio"
+            name="radio-1"
+            className="form__radio"
+            required
+          />
+          2
+        </label>
+        <label className="form__label">
+          <input
+            id="field-radio-group-option-1"
+            type="radio"
+            name="radio-1"
+            className="form__radio"
+            required
+          />
+          3
+        </label>
         <span
           className={`form__input-error${
             errors ? " form__input-error_active" : ""
           }`}
         ></span>
-      </label>
+      </fieldset>
       <div className="form__buttons">
         <button
-          className={`form__button${errors ? " form__button_active" : ""}`}
-          onClick={() => {navigate("/test-assignment/create")}}
-          id="button-start"
+          className={`form__button form__button_type_back${
+            !errors ? " form__button_type_back_active" : ""
+          }`}
+          onClick={() => {
+            navigate("/test-assignment/create");
+          }}
+          id="button-back"
           disabled={errors}
         >
           Назад
         </button>
         <button
-          className={`form__button${errors ? " form__button_active" : ""}`}
-          onClick={() => {navigate("/test-assignment/create/step3")}}
-          id="button-start"
+          className={`form__button${!errors ? " form__button_active" : ""}`}
+          onClick={() => {
+            navigate("/test-assignment/create/step3");
+          }}
+          id="button-next"
           disabled={errors}
         >
           Далее

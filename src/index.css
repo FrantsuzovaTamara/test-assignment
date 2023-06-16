@@ -3,6 +3,8 @@
 @import url(./blocks/body/body.css);
 @import url(./blocks/page/page.css);
 
+/* Main */
+
 @import url(./blocks/main/main.css);
 @import url(./blocks/main/__author/main__author.css);
 @import url(./blocks/main/__avatar/main__avatar.css);
@@ -12,13 +14,42 @@
 @import url(./blocks/main/__link-item/main__link-item.css);
 @import url(./blocks/main/__link/main__link.css);
 
+/* Form */
+
 @import url(./blocks/form/form.css);
+@import url(./blocks/form/location/_main/form_location_main.css);
+@import url(./blocks/form/location/_step1/form_location_step1.css);
+@import url(./blocks/form/location/_step2/form_location_step2.css);
+@import url(./blocks/form/location/_step3/form_location_step3.css);
+
 @import url(./blocks/form/__field/form__field.css);
+
 @import url(./blocks/form/__input/form__input.css);
+@import url(./blocks/form/__input/location/_main/form__input_location_main.css);
+@import url(./blocks/form/__input/location/_step3/form__input_location_step3.css);
+@import url(./blocks/form/__input/_error/form__input_error.css);
+
 @import url(./blocks/form/__input-error/form__input-error.css);
-@import url(./blocks/form/__input-error/_active/form__input-error_active.css);
+
+@import url(./blocks/form/__select/form__select.css);
+@import url(./blocks/form/__select/_error/input__select_error.css);
+@import url(./blocks/form/__icon/form__icon.css);
+
+@import url(./blocks/form/__delete-button/form__delete-button.css);
+@import url(./blocks/form/__advantage/form__advantage.css);
+@import url(./blocks/form/__add-button/form__add-button.css);
+@import url(./blocks/form/__label/form__label.css);
+
 @import url(./blocks/form/__buttons/form__buttons.css);
+@import url(./blocks/form/__buttons/location/_step1/form__buttons_location_step1.css);
+
 @import url(./blocks/form/__button/form__button.css);
+@import url(./blocks/form/__button/_active/form__button_avtive.css);
+@import url(./blocks/form/__button/type/_back/form__button_type_back.css);
+@import url(./blocks/form/__button/type/_back/_active/form__button_type_back_active.css);
+@import url(./blocks/form/__button/type/_start/form__button_type_start.css);
+
+/* Create */
 
 @import url(./blocks/create/create.css);
 @import url(./blocks/create/__passing/create__passing.css);
@@ -30,6 +61,8 @@
 @import url(./blocks/create/__numbers/create__numbers.css);
 @import url(./blocks/create/__number/create__number.css);
 @import url(./blocks/create/__number/_pointed/create__number_pointed.css);
+
+/* Popup */
 
 @import url(./blocks/popup/popup.css);
 @import url(./blocks/popup/_opened/popup_opened.css);

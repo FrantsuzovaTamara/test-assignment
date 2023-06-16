@@ -1,3 +1,15 @@
 .create__step_passed {
   background: #5558FA;
 }
+
+.create__step_passed::before {
+  content: url(../../../../images/create__passed.svg);
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2px;
+  box-sizing: border-box;
+}

@@ -4,9 +4,10 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { DataContext } from "../context/DataContext";
 import schema from "../utils/Schema";
+import arrow from "../images/create__arrow.svg"
 
 function Step1() {
-  const {formData, setFormData} = useContext(DataContext);
+  const { formData, setFormData } = useContext(DataContext);
 
   const navigate = useNavigate();
 
@@ -22,11 +23,11 @@ function Step1() {
   }
 
   return (
-    <form className="form" onSubmit={handleSubmit(onSubmit)} noValidate>
+    <form className="form form_location_step1" onSubmit={handleSubmit(onSubmit)} noValidate>
       <label className="form__field">
         Никнейм
         <input
-          {...register('email')}
+          {...register("email")}
           id="field-nickname"
           type="text"
           name="nickname"
@@ -43,7 +44,7 @@ function Step1() {
       <label className="form__field">
         Имя
         <input
-          {...register('email')}
+          {...register("email")}
           id="field-name"
           type="text"
           name="name"
@@ -75,10 +76,17 @@ function Step1() {
       </label>
       <label className="form__field">
         Пол
-        <select name="sex" id="field-sex" placeholder="Не выбрано" required>
-          <option value="">Не выбрано</option>
+        <select
+          className={`form__select${errors ? " form__select_error" : ""}`}
+          name="sex"
+          id="field-sex"
+          placeholder="Не выбрано"
+          required
+        >
+          <option value="" disabled selected>Не выбрано</option>
           <option value="male">Мужской</option>
           <option value="female">Женский</option>
+          <img className="form__icon" src={arrow} alt="icon"/>
         </select>
         <span
           className={`form__input-error${
@@ -86,21 +94,27 @@ function Step1() {
           }`}
         ></span>
       </label>
-      <div className="form__buttons">
+      <div className="form__buttons form__buttons_location_step1">
         <button
-          className={`form__button${!errors ? " form__button_active" : ""}`}
-          onClick={() => {navigate("/test-assignment")}}
+          className={`form__button form__button_type_back${
+            !errors ? " form__button_type_back_active" : ""
+          }`}
+          onClick={() => {
+            navigate("/test-assignment");
+          }}
           to="/test-assignment"
-          id="button-start"
+          id="button-back"
           disabled={errors}
         >
           Назад
         </button>
         <button
           className={`form__button${!errors ? " form__button_active" : ""}`}
-          onClick={() => {navigate("/test-assignment/create/step2")}}
+          onClick={() => {
+            navigate("/test-assignment/create/step2");
+          }}
           to="/test-assignment/create/step2"
-          id="button-start"
+          id="button-next"
           disabled={errors}
         >
           Далее

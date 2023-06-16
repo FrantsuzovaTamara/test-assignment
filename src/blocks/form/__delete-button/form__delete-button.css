@@ -1,0 +1,10 @@
+.form__delete-button {
+  background: none;
+  background-image: url(../../../images/create__trash.svg);
+  width: 20px;
+  height: 19px;
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}

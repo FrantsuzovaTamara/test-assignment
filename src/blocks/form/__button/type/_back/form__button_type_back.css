@@ -1,0 +1,7 @@
+.form__button_type_back {
+  background: none;
+  color: #9a9a9b;
+  border: 1.5px solid #9a9a9b;
+  border-radius: 4px;
+  transition: border-radius .5s ease, color .5s ease;
+}
