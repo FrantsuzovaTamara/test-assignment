@@ -1,69 +1,87 @@
-import { useState } from "react";
-import FormValidator from "../utils/FormValidator";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { yupResolver } from "@hookform/resolvers/yup";
+import schema from "../utils/Schema";
+import { DataContext } from "../context/DataContext";
+import { useForm } from "react-hook-form";
+import { parsePhoneNumberFromString } from "libphonenumber-js";
 
-function MainForm({ onSubmit }) {
-  const [formValues, setFormValues] = useState([]);
+function MainForm() {
+  const {formData, setFormData} = useContext(DataContext);
+  
+  const navigate = useNavigate(); 
 
-  const { errors, isValid, handleChange } = FormValidator({});
+  const { register, handleSubmit, errors } = useForm({
+    defaultValues: { phone: formData.phone, email: formData.email },
+    mode: "onBlur",
+    resolver: yupResolver(schema),
+  });
 
   const handleChangeValue = (e) => {
     const { name, value } = e.target;
-    handleChange(e, ".auth__form");
 
-    setFormValues({
-      ...formValues,
+    setFormData({
+      ...formData,
       [name]: value,
     });
   };
 
-  function submitForm(e) {
+  function onSubmit(e) {
     e.preventDefault();
-    onSubmit(formValues);
+    setFormData(formData);
+  }
+
+  function maskedPhoneNumber(e) {
+    const phoneNumber = parsePhoneNumberFromString(e.target.value)
+    if (!phoneNumber) {
+      return e.target.value;
+    }
+    return phoneNumber.formatInternational();
   }
 
   return (
-    <form className="form" onSubmite={submitForm} noValidate>
+    <form className="form" onSubmit={handleSubmit(onSubmit)} noValidate>
       <label className="form__field">
         Номер телефона
         <input
+          {...register('phone')}
           id="phone"
           type="tel"
           name="phone"
-          pattern="^\+7[0-9]{10}"
-          className={`form__input`}
+          className={`form__input${errors ? " form__input_error" : ""}`}
           placeholder="+7 999 999-99-99"
-          onChange={handleChangeValue}
+          onChange={maskedPhoneNumber}
           required
         />
         <span
           className={`form__input-error${
-            errors.name ? " form__input-error_active" : ""
+            errors ? " form__input-error_active" : ""
           }`}
-        ></span>
+        >{errors ? errors.message : ""}</span>
       </label>
       <label className="form__field">
         Email
         <input
+          {...register('email')}
           id="email"
           type="email"
           name="email"
-          pattern="^.+@.+\..+$"
-          className={`form__input`}
+          className={`form__input${errors ? " form__input_error" : ""}`}
           placeholder="some@email.com"
           onChange={handleChangeValue}
           required
         />
         <span
           className={`form__input-error${
-            errors.name ? " form__input-error_active" : ""
+            errors ? " form__input-error_active" : ""
           }`}
-        ></span>
+        >{errors ? errors.message : ""}</span>
       </label>
       <button
-        className={`form__button${isValid ? " form__button_active" : ""}`}
-        to="/create"
+        className={`form__button${!errors ? " form__button_active" : ""}`}
+        onClick={() => {navigate("/test-assignment/create")}}
         id="button-start"
-        disabled={!isValid}
+        disabled={!errors}
       >
         Начать
       </button>

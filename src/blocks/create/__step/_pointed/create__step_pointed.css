@@ -1,0 +1,15 @@
+.create__step_pointed {
+  background: #5558FA;
+}
+
+.create__step_pointed::before {
+  content: ".";
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}

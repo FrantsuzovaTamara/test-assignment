@@ -3,7 +3,6 @@ import error from "../images/popup__error.svg";
 import success from "../images/popup__success.svg";
 
 function Popup({ isOpen, isError }) {
-  console.log(isOpen, isError)
   return (
     <>
       <div className={`popup${isOpen ? " popup_opened" : ""}`}>

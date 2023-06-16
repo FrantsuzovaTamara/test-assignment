@@ -17,10 +17,19 @@
 @import url(./blocks/form/__input/form__input.css);
 @import url(./blocks/form/__input-error/form__input-error.css);
 @import url(./blocks/form/__input-error/_active/form__input-error_active.css);
+@import url(./blocks/form/__buttons/form__buttons.css);
 @import url(./blocks/form/__button/form__button.css);
 
-
-
+@import url(./blocks/create/create.css);
+@import url(./blocks/create/__passing/create__passing.css);
+@import url(./blocks/create/__step/create__step.css);
+@import url(./blocks/create/__step/_pointed/create__step_pointed.css);
+@import url(./blocks/create/__step/_passed/create__step_passed.css);
+@import url(./blocks/create/__scale/create__scale.css);
+@import url(./blocks/create/__scale/_passed/create__scale_passed.css);
+@import url(./blocks/create/__numbers/create__numbers.css);
+@import url(./blocks/create/__number/create__number.css);
+@import url(./blocks/create/__number/_pointed/create__number_pointed.css);
 
 @import url(./blocks/popup/popup.css);
 @import url(./blocks/popup/_opened/popup_opened.css);
